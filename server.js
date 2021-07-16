@@ -1,9 +1,9 @@
-if(process.env.Node_ENV !=='production')
+/*if(process.env.Node_ENV !=='production')
 {
     dotenv=require('dotenv')
 }
 const dotenv=require('dotenv')
-dotenv.config()
+dotenv.config()*/
 const express=require('express')
 const app=express()
 const expressLayouts = require('express-ejs-layouts')
@@ -22,8 +22,8 @@ app.use(methodOverride('_method'))
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ limit:'10mb',extended:false}))
 const mongoose= require('mongoose')
-console.log(process.env.DATABASE_URL)
-mongoose.connect(process.env.DATABASE_URL ,{useNewUrlParser: true})
+//console.log(process.env.DATABASE_URL)
+mongoose.connect(mongodb+srv://library:library@cluster0.5jnjs.mongodb.net/myFirstDatabase?retryWrites=true&w=majority ,{useNewUrlParser: true})
 
 const db=mongoose.connection
 db.on('error',error => console.error(error))
